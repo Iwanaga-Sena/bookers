@@ -1,8 +1,6 @@
 class BooksController < ApplicationController
-  def new
-  end
-
-  def index
+  def index_and_new
+    
   end
 
   def show
