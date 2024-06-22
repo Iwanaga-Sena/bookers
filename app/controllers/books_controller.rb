@@ -39,8 +39,13 @@ class BooksController < ApplicationController
 
   def destroy
     book = Book.find(params[:id])
-    book.destroy
-    redirect_to '/books'
+    if book.destroy
+      flash[:notice] = "Book was successfully destroyed."
+      redirect_to '/books'
+    else
+      @books = Book.all
+      render :index
+    end
   end
 
   # ストロングパラメータ
