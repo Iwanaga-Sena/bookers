@@ -23,7 +23,7 @@
 </table>
 
 <h3>New Book</h3>
-<% if @book.errorsj.any? %>
+<% if @book.errors.any? %>
     <%= @book.errors.count %> errors prohibited this book from being saved:
     <ul>
         <% @book.errors.full_messages.each do |message| %>
